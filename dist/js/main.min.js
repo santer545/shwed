@@ -60,7 +60,7 @@ function numberOfslides() {
 
         }
 
-        $('.reviews-counter').text(display_text + '/' + e.item.count);
+        $('.reviews-counter').text(display_text + '/<sup>' + e.item.count + '</sup>');
 
 
     });
