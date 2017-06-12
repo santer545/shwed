@@ -25,74 +25,65 @@
             </div>
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <div class="basket">
-                        <div class="basket-counter">3</div>
-                        <img src="images/basket.png" height="19" width="19" alt="">
-                    </div>
-                    <button type="button" class="navbar-toggle collapsed" id="menu-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Спортивные достижения</a>
-                </div>
+                <a class="navbar-brand" href="#">Спортивные достижения</a>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
+                <div class="menu-wrapper">
+                    <ul class="nav navbar-nav clearfix">
                         <li><a href="#">Доставка</a></li>
                         <li><a href="#">Отзывы</a></li>
                         <li><a href="#">Как заказать?</a></li>
                         <li><a href="#">Новости</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
+                <div class="basket" data-toggle="modal" data-target=".basket-modal">
+                    <div class="basket-counter">3</div>
+                    <img src="images/basket.png" height="19" width="19" alt="">
+                </div>
+                <a href="tel:88007003111" class="header-phone">8 (800) 700-31-11</a>
+                <button type="button" class="navbar-toggle collapsed" id="menu-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
         </nav>
         <div class="banner">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="clearfix">
+                    <div class="banner-text-holder">
                         <div class="banner-text">
                             <div class="banner-description">
                                 <strong>С доставкой по всей России!</strong> Так-же доступен самовывозиз Москвы, Санкт-петербурга, Краснодара, и Ульяновска
                             </div>
                             <div class="banner-heading"><span>Шведские стенки</span> от производителя</div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <figure class="banner-img">
-                            <img src="images/banner.jpg" height="743" width="495" alt="">
-                        </figure>
-                        <div class="banner-mobile-share text-center visible-xs">
+                        <div class="banner-mobile-share banner-mobile-share--desctop">
                             До конца июня скидка 50% на сборку оборудование
                             <div class="btn-wr">
-                                <button class="btn btn-primary"><span>Оставить заявку</span></button>
+                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".application"><span>Оставить заявку</span></button>
                             </div>
                             <div class="share-value">50%</div>
                         </div>
+                    </div>
+                    <figure class="banner-img">
+                        <img src="images/banner.jpg" height="743" width="495" alt="">
+                    </figure>
+                    <div class="banner-mobile-share text-center">
+                        До конца июня скидка 50% на сборку оборудование
+                        <div class="btn-wr">
+                            <button class="btn btn-primary"><span>Оставить заявку</span></button>
+                        </div>
+                        <div class="share-value">50%</div>
                     </div>
                 </div>
             </div>
         </div>
         <section class="catalog">
-            <div class="heading-h1">Каталог товаров</div>
             <div class="container-fluid">
+                <div class="heading-h1">Каталог товаров</div>
                 <div class="catalog-block">
                     <figure class="catalog-img">
                         <img src="images/product.jpg" height="208" width="99" alt="">
@@ -390,9 +381,19 @@
                 <div class="owl-carousel">
                     <div>
                         <figure class="reviews-img">
-                            <img src="images/comment.jpg" height="175" width="165" alt="">
+                            <div class="reviews-nav-holder">
+                                <img src="images/comment.jpg" height="175" width="165" alt="">
+                                <ul class="reviews-nav">
+                                    <li class="reviews-prev">
+                                        <img src="images/arrow-left.png" alt="">
+                                    </li>
+                                    <li class="reviews-next">
+                                        <img src="images/arrow-right.png" alt="">
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="reviews-counter"></div>
-                            <div class="reviews-quot"></div>
+                            <div class="reviews-quot"><img src="images/quot.png" alt=""></div>
                         </figure>
                         <div class="reviews-text">
                             <div class="reviews-name"><strong>Ирина Каровская</strong> (г. Калининград)</div>
@@ -401,7 +402,19 @@
                     </div>
                     <div>
                         <figure class="reviews-img">
-                            <img src="images/comment.jpg" height="175" width="165" alt="">
+                            <div class="reviews-nav-holder">
+                                <img src="images/comment.jpg" height="175" width="165" alt="">
+                                <ul class="reviews-nav">
+                                    <li class="reviews-prev">
+                                        <img src="images/arrow-left.png" alt="">
+                                    </li>
+                                    <li class="reviews-next">
+                                        <img src="images/arrow-right.png" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="reviews-counter"></div>
+                            <div class="reviews-quot"><img src="images/quot.png" alt=""></div>
                         </figure>
                         <div class="reviews-text">
                             <div class="reviews-name"><strong>Ирина Каровская</strong> (г. Калининград)</div>
@@ -410,7 +423,19 @@
                     </div>
                     <div>
                         <figure class="reviews-img">
-                            <img src="images/comment.jpg" height="175" width="165" alt="">
+                            <div class="reviews-nav-holder">
+                                <img src="images/comment.jpg" height="175" width="165" alt="">
+                                <ul class="reviews-nav">
+                                    <li class="reviews-prev">
+                                        <img src="images/arrow-left.png" alt="">
+                                    </li>
+                                    <li class="reviews-next">
+                                        <img src="images/arrow-right.png" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="reviews-counter"></div>
+                            <div class="reviews-quot"><img src="images/quot.png" alt=""></div>
                         </figure>
                         <div class="reviews-text">
                             <div class="reviews-name"><strong>Ирина Каровская</strong> (г. Калининград)</div>
@@ -421,68 +446,269 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="container-fluid">
-                <div class="heading-h3">Спортивные достижения</div>
-                <div class="clearfix">
-                    <div class="footer-right">
-                        <div class="subscribe">
-                            <div class="footer-heading">Подписка на рассылку</div>
-                            <form action="" class="form">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Email" id="subscribe" class="form-control">
-                                    <button class="btn btn-subscribe">Подписаться!</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="contacts">
-                            <div class="footer-heading">Контактная информация</div>
-                            1-ый Вязовский пр-д, 4С7 склад самовывоза. С 8-00 до 20-00 ПН-ВС</div>
-                        <div class="contacts">
-                            <div class="footer-heading">Доставка по свей России</div>
-                            Так-же доступен самовывоз из Москвы, Санкт-петербурга, Краснодара, и Ульяновска</div>
+            <div class="container-fluid clearfix">
+                <div class="heading-h3 float-heading">Спортивные достижения</div>
+                <div class="footer-right">
+                    <div class="subscribe">
+                        <div class="footer-heading">Подписка на рассылку</div>
+                        <form action="" class="form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Email" id="subscribe" class="form-control">
+                                <button class="btn btn-subscribe">Подписаться!</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="footer-right">
-                        <div class="footer-heading">Реквезиты продавца</div>
-                        <ul class="rekvizit">
-                            <li>ООО «Спортов»</li>
-                            <li>ИНН 7709657007</li>
-                            <li>КПП 772101001</li>
-                            <li>Юридический адрес: РФ, 109428, г. Москва,</li>
-                            <li>1-ый Вязовский пр-д, д. 4, корп.1, оф. 446</li>
-                            <li>Физический адрес: РФ, 109428, г. Москва,</li>
-                            <li>1-ый Вязовский пр-д, д. 4, корп.1, оф. 446</li>
-                            <li>Банковские реквизиты:</li>
-                            <li>р/с № 40702810850140062601 в ПАО</li>
-                            <li>«Промсвязьбанк», г. Москва</li>
-                            <li>к/с № 30101810400000000555</li>
-                            <li>БИК 044525555</li>
-                            <li>ОГРН: 1067746216790</li>
-                        </ul>
-                    </div>
+                    <div class="contacts">
+                        <div class="footer-heading">Контактная информация</div>
+                        1-ый Вязовский пр-д, 4С7 склад самовывоза. С 8-00 до 20-00 ПН-ВС</div>
+                    <div class="contacts">
+                        <div class="footer-heading">Доставка по свей России</div>
+                        Так-же доступен самовывоз из Москвы, Санкт-петербурга, Краснодара, и Ульяновска</div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-heading">Реквезиты продавца</div>
+                    <ul class="rekvizit">
+                        <li>ООО «Спортов»</li>
+                        <li>ИНН 7709657007</li>
+                        <li>КПП 772101001</li>
+                        <li>Юридический адрес: РФ, 109428, г. Москва,</li>
+                        <li>1-ый Вязовский пр-д, д. 4, корп.1, оф. 446</li>
+                        <li>Физический адрес: РФ, 109428, г. Москва,</li>
+                        <li>1-ый Вязовский пр-д, д. 4, корп.1, оф. 446</li>
+                        <li>Банковские реквизиты:</li>
+                        <li>р/с № 40702810850140062601 в ПАО</li>
+                        <li>«Промсвязьбанк», г. Москва</li>
+                        <li>к/с № 30101810400000000555</li>
+                        <li>БИК 044525555</li>
+                        <li>ОГРН: 1067746216790</li>
+                    </ul>
                 </div>
             </div>
         </footer>
         <div class="bottom-line">
-            <div class="copy">© 2008-2017 ООО "Спортивные достижения" Интернет-гипермаркет спортивных товаров</div>
-            <ul class="social-list">
-                <li class="social-item">
-                    <a href=""><img src="images/vk.png" height="22" width="22" alt=""></a>
-                </li>
-                <li class="social-item">
-                    <a href=""><img src="images/facebook.png" height="22" width="22" alt=""></a>
-                </li>
-                <li class="social-item">
-                    <a href=""><img src="images/twitter.png" height="22" width="22" alt=""></a>
-                </li>
-                <li class="social-item">
-                    <a href=""><img src="images/yotube.png" height="22" width="22" alt=""></a>
-                </li>
-            </ul>
+            <div class="container-fluid">
+                <div class="copy">© 2008-2017 ООО "Спортивные достижения" Интернет-гипермаркет спортивных товаров</div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href=""><img src="images/vk.png" height="22" width="22" alt=""></a>
+                    </li>
+                    <li class="social-item">
+                        <a href=""><img src="images/facebook.png" height="22" width="22" alt=""></a>
+                    </li>
+                    <li class="social-item">
+                        <a href=""><img src="images/twitter.png" height="22" width="22" alt=""></a>
+                    </li>
+                    <li class="social-item">
+                        <a href=""><img src="images/yotube.png" height="22" width="22" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade application" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog--sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="images/close-modal.png" alt=""></button>
+                    <h4 class="modal-title" id="myModalLabel">Оставьте заявку, 
+и мы с вами свяжемся 
+в течении часа!</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form">
+                        <div class="form-group"><input type="text" placeholder="Имя" class="form-control form-control--modal"></div>
+                        <div class="form-group"><input type="text" placeholder="Телефон" class="form-control form-control--modal"></div>
+                        <button type="button" class="btn btn-modal">Оставить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade basket-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="images/close-modal.png" alt=""></button>
+                    <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Изображение</th>
+                            <th>Наименование</th>
+                            <th>Цвет</th>
+                            <th>Кол-во</th>
+                            <th>Стоимость</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/turnik.png" alt="">
+                            </td>
+                            <td>
+                                <strong>Шведская стенка №1</strong>
+                            </td>
+                            <td class="color">
+                                <label id="check-1"><input type="checkbox"></label>
+                                <label id="check-2"><input type="checkbox"></label>
+                                <label id="check-3"><input type="checkbox"></label>
+                            </td>
+                            <td></td>
+                            <td><strong>5 500p</strong></td>
+                            <td class="delete"><img src="images/del.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/turnik.png" alt="">
+                            </td>
+                            <td>
+                                <strong>Шведская стенка №1</strong>
+                            </td>
+                            <td class="color">
+                                <label id="check-1"><input type="checkbox"><span>Красный</span></label>
+                                <label id="check-2"><input type="checkbox"><span>Зеленый</span></label>
+                                <label id="check-3"><input type="checkbox"><span>Синий</span></label>
+                            </td>
+                            <td></td>
+                            <td><strong>5 500p</strong></td>
+                            <td class="delete"><img src="images/del.png" alt=""></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <div class="personal-final">Итого: <strong>6 490p</strong></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-wr">
+                                <button class="btn btn-primary"><span>Оформить заказ</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".order-modal">
+  Launch demo modal
+</button>
+    <div class="modal fade order-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="images/close-modal.png" alt=""></button>
+                    <h4 class="modal-title" id="myModalLabel">Оформление заказа</h4>
+                </div>
+                <div class="personal-data">
+                    <form action="" class="form">
+                        <p class="personal-heading">Тип плательщика</p>
+                        <div class="form-group">
+                            <label class="label-inline" for=""><input type="checkbox">Физическое лицо</label>
+                            <label class="label-inline" for=""><input type="checkbox">Юридическое лицо</label>
+                        </div>
+                        <p class="personal-heading">Информация для оплаты и доставки заказа</p>
+                        <div class="form-group">
+                            <label for="">Ф.И.О *</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email *</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Телефон *</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Местоположение (укажите ваш город)</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Адрес доставки</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <p class="personal-heading">Служба доставки</p>
+                        <div class="form-group">
+                            <label class="label-inline" for=""><input type="checkbox">Доставка курьером</label>
+                            <label class="label-inline" for=""><input type="checkbox">Самовывоз</label>
+                        </div>
+                        <p class="personal-heading">Платежная система</p>
+                        <div class="form-group">
+                            <label class="label-inline" for=""><input type="checkbox">Наличные курьеру</label>
+                            <label class="label-inline" for=""><input type="checkbox">Банковские карты</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Комментарий к заказу</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Изображение</th>
+                            <th>Наименование</th>
+                            <th>Цвет</th>
+                            <th>Кол-во</th>
+                            <th>Стоимость</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/turnik.png" alt="">
+                            </td>
+                            <td>
+                                <strong>Шведская стенка №1</strong>
+                            </td>
+                            <td class="color">
+                                <label id="check-1"><input type="checkbox"></label>
+                                <label id="check-2"><input type="checkbox"></label>
+                                <label id="check-3"><input type="checkbox"></label>
+                            </td>
+                            <td></td>
+                            <td><strong>5 500p</strong></td>
+                            <td class="delete"><img src="images/del.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/turnik.png" alt="">
+                            </td>
+                            <td>
+                                <strong>Шведская стенка №1</strong>
+                            </td>
+                            <td class="color">
+                                <label id="check-1"><input type="checkbox"><span>Красный</span></label>
+                                <label id="check-2"><input type="checkbox"><span>Зеленый</span></label>
+                                <label id="check-3"><input type="checkbox"><span>Синий</span></label>
+                            </td>
+                            <td></td>
+                            <td><strong>5 500p</strong></td>
+                            <td class="delete"><img src="images/del.png" alt=""></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <div class="personal-final">Итого: <strong>6 490p</strong></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-wr">
+                                <button class="btn btn-primary"><span>Оформить заказ</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/jquery-2.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.sameheight.js"></script>
     <script src="js/main.js"></script>
 </body>
 

@@ -1,4 +1,5 @@
 // Common styles
+$grid-float-breakpoint: 991px;
 html,
 body {
     height: 100%;
@@ -31,15 +32,15 @@ img {
 }
 
 strong {
-    font-family: 'Gotham Pro Black', sans-serif;
+    font-family: 'Gotham Pro Bold', sans-serif;
 }
 
 // buttons
 .btn {
     border-radius: 0;
     font-size: 18px;
+    font-family: 'Gotham Pro Bold', sans-serif;
     &-primary {
-        font-family: 'Gotham Pro Bold', sans-serif;
         border: 1px solid rgba(157, 55, 252, 0.9);
         padding: 3px;
         background-color: #fff;
@@ -52,9 +53,12 @@ strong {
     }
     &-default {
         border: 1px solid rgba(157, 55, 252, 0.9);
-        padding: 7px 65px;
+        padding: 7px 60px;
         background-color: #fff;
         color: #9d37fc;
+        @media screen and (min-width: 480px) {
+            padding: 7px 65px;
+        }
     }
 }
 
@@ -97,10 +101,16 @@ strong {
 // headings
 .heading-h1 {
     font-family: 'Gotham Pro Bold';
-    font-size: 30px;
-    line-height: 38px;  
+    font-size: 25px;
+    line-height: 38px;
     margin-bottom: 18px;
     text-align: center;
+    @media screen and (min-width: 480px) {
+        font-size: 30px;
+    }
+    @media screen and (min-width: 992px) {
+        text-align: left;
+    }
     &--inverse {
         position: relative;
         color: #fff;
@@ -111,16 +121,18 @@ strong {
 .heading-h3 {
     font-family: 'Gotham Pro Bold';
     font-size: 18px;
-    line-height: 25px;  
+    line-height: 25px;
     margin-bottom: 18px;
     text-align: center;
+    @media screen and (min-width: 992px) {
+        text-align: left;
+    }
     &--inverse {
         position: relative;
         color: #fff;
         z-index: 2;
     }
 }
-
 
 // topbar
 .navbar {
@@ -132,8 +144,11 @@ strong {
         .navbar-brand {
             color: #191919;
             font-family: 'Gotham Pro Bold', sans-serif;
-            font-size: 18px;
+            font-size: 11px;
             padding: 20px 0 0 0;
+            @media screen and (min-width: 480px) {
+                font-size: 18px;
+            }
         }
         .navbar-toggle {
             &:hover,
@@ -175,6 +190,31 @@ strong {
     margin: 0;
 }
 
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+    @media screen and (min-width: 992px) {
+        margin: 0;
+    }
+}
+
+.navbar-default .navbar-nav > li > a {
+    padding: 0 13px;
+}
+
+.navbar-nav {
+    padding-top: 20px;
+    padding-left: 32px;
+    @media screen and (min-width: 1024px) {
+        padding-left: 4%;
+    }
+    @media screen and (min-width: 1100px) {
+        padding-left: 9%;
+    }
+    @media screen and (min-width: 1199px) {
+        padding-left: 11%;
+    }
+}
+
 .basket {
     position: relative;
     float: right;
@@ -183,6 +223,7 @@ strong {
     height: 60px;
     line-height: 60px;
     background-color: #f5e800;
+    cursor: pointer;
     &-counter {
         position: absolute;
         bottom: 5px;
@@ -212,12 +253,25 @@ strong {
         margin: 0;
         list-style-type: none;
         li {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            @media screen and (min-width: 480px) {
+                margin-bottom: 30px;
+            }
         }
         a {
-            font-size: 24px;
+            font-size: 20px;
             color: #fff;
+            @media screen and (min-width: 480px) {
+                font-size: 24px;
+            }
         }
+    }
+}
+
+.menu-wrapper {
+    display: none;
+    @media screen and (min-width: 992px) {
+        display: block;
     }
 }
 
@@ -227,43 +281,114 @@ strong {
 
 .mobile-phone {
     font-family: 'Gotham Pro Bold', sans-serif;
-    font-size: 36px;
+    font-size: 24px;
     margin-top: 20px;
     color: #fff;
     display: inline-block;
+    @media screen and (min-width: 480px) {
+        font-size: 36px;
+    }
+}
+
+.header-phone {
+    font-family: 'Gotham Pro Bold', sans-serif;
+    font-size: 18px;
+    float: right;
+    padding-top: 18px;
+    color: #191919;
+    margin-right: 40px;
+    display: none;
+    @media screen and (min-width: 992px) {
+        display: block;
+        padding-top: 15px;
+        margin-right: 28px;
+    }
 }
 
 // banner
 .banner {
     background-color: #f7f7f7;
+    @media screen and (min-width: 992px) {
+        margin-bottom: 91px;
+    }
     &-text {
         padding-top: 65px;
         padding-bottom: 90px;
         text-align: center;
+        @media screen and (min-width: 992px) {
+            padding-bottom: 9px;
+        }
+        &-holder {
+            @media screen and (min-width: 992px) {
+                width: 53%;
+                float: left;
+            }
+        }
+        @media screen and (min-width: 992px) {
+            padding-top: 85px;
+            text-align: left;
+        }
     }
     &-description {
         font-size: 18px;
         line-height: 24px;
     }
     &-heading {
-        font-size: 48px;
+        font-size: 32px;
         line-height: 35px;
         margin-top: 20px;
         margin-left: -15px;
         margin-right: -15px;
+        font-family: 'Gotham Pro Light';
+        @media screen and (min-width: 480px) {
+            font-size: 48px;
+        }
+        @media screen and (min-width: 1024px) {
+            font-size: 60px;
+            margin-top: 16px;
+            margin-left: -5px;
+            margin-right: 0;
+            line-height: 60px;
+        }
         span {
             display: block;
             font-family: 'Gotham Pro Black', sans-serif;
-            background-color: #f5e800;
+            /* background-color: #f5e800; */
             line-height: 63px;
+            @media screen and (min-width: 1024px) {
+                font-size: 60px;
+                position: relative;
+                z-index: 1;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 28px;
+                    right: 50px;
+                    top: 0;
+                    height: 70px;
+                    background-color: #f5e800;
+                    z-index: -1;
+                }
+            }
         }
     }
     &-img {
         margin-left: -15px;
         margin-right: -15px;
+        @media screen and (min-width: 992px) {
+            width: 47%;
+            float: left;
+            margin: 0;
+        }
         img {
             width: 100%;
         }
+    }
+    .btn-wr {
+        position: relative;
+        padding-top: 21px;
+        margin-bottom: -65px;
+        z-index: 2;
     }
     &-mobile-share {
         padding: 44px 15px 64px;
@@ -273,20 +398,39 @@ strong {
         margin-left: -15px;
         margin-right: -15px;
         background-color: #fff;
-    }
-    .btn-wr {
-        position: relative;
-        padding-top: 21px;
-        margin-bottom: -65px;
-        z-index: 2;
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+        &--desctop {
+            background-color: transparent;
+            display: none;
+            @media screen and (min-width: 992px) {
+                display: block;
+            }
+            .btn-wr {
+                z-index: 3;
+            }
+            .share-value {
+                position: relative;
+                margin-left: 49%;
+                z-index: 2;
+                @media screen and (min-width: 992px) {
+                    margin-left: 41%;
+                }
+            }
+        }
     }
 }
 
 .share-value {
     font-family: 'Gotham Pro Black', sans-serif;
-    font-size: 200px;
-    line-height: 200px;
+    font-size: 100px;
+    line-height: 190px;
     color: #f5e800;
+    @media screen and (min-width: 480px) {
+        font-size: 200px;
+        line-height: 200px;
+    }
 }
 
 // catalog 
@@ -304,17 +448,26 @@ strong {
         margin: 0;
         flex-grow: 1;
         order: 1;
-        width: 135px;
+        width: 100%;
+        @media screen and (min-width: 480px) {
+            width: 135px;
+        }
     }
     &-info {
         font-size: 12px;
         padding-top: 25px;
         border-top: 1px solid #e8e8e8;
         order: 4;
+        @media screen and (min-width: 600px) {
+            width: 100%;
+        }
         ul {
             list-style-type: none;
-            padding: 0 0 0 30px;
+            padding: 0 15px;
             margin: 0;
+            @media screen and (min-width: 480px) {
+                padding: 0 0 0 30px;
+            }
             &:nth-of-type(2) {
                 display: none;
             }
@@ -337,16 +490,22 @@ strong {
     &-header {
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 18px;
-        padding: 22px 30px 0;
+        padding: 22px 30px 10px;
         order: 2;
         flex-grow: 3;
         width: calc(100% - 135px);
+        @media screen and (min-width: 480px) {
+            padding: 22px 30px 0;
+        }
         .btn-wr {
             padding: 21px 0 0 0;
         }
         .btn-primary {
             span {
-                padding: 4px 41px;
+                padding: 4px 36px;
+                @media screen and (min-width: 480px) {
+                    padding: 4px 41px;
+                }
             }
         }
     }
@@ -385,19 +544,35 @@ strong {
     padding-bottom: 22px;
     background-color: #f7f7f7;
     margin-bottom: 98px;
+    @media screen and (min-width: 1199px) {
+        padding-bottom: 58px;
+        margin-bottom: 90px;
+    }
     &-item {
         padding-top: 40px;
         font-size: 14px;
         line-height: 25px;
-        padding-right: 80px;
-        padding-left: 50px; 
+        padding-right: 25px;
+        padding-left: 25px;
+        @media screen and (min-width: 480px) {
+            padding-right: 80px;
+            padding-left: 50px;
+        }
+        @media screen and (min-width: 992px) {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        @media screen and (min-width: 1199px) {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
     &-header {
         font-size: 0;
         margin-bottom: 15px;
     }
     &-text {
-        line-height: 24px;  
+        line-height: 24px;
     }
     &-icon,
     &-heading {
@@ -409,9 +584,12 @@ strong {
     }
     &-heading {
         font-family: 'Gotham Pro Bold', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 31px;
         width: calc(100% - 82px);
+        @media screen and (min-width: 480px) {
+            font-size: 18px;
+        }
     }
 }
 
@@ -419,8 +597,14 @@ strong {
 .card {
     &-item {
         border: 1px solid #e8e8e8;
-        width: 80%; 
-        margin: 25px auto 0;
+        margin: 25px 0 0;
+        @media screen and (min-width: 480px) {
+            width: 80%;
+            margin: 25px auto 0;
+        }
+        @media screen and (min-width: 992px) {
+            width: 100%;
+        }
         .btn-wr {
             display: inline-block;
             vertical-align: middle;
@@ -434,7 +618,7 @@ strong {
     }
     &-info {
         padding: 11px 20px 0;
-        min-height: 306px;  
+        min-height: 320px;
         ul {
             padding: 0;
             margin: 0;
@@ -444,7 +628,7 @@ strong {
                 margin-bottom: 6px;
             }
             ul {
-                margin-top: 13px;
+                margin-top: 6px;
                 list-style-type: none;
                 li {
                     position: relative;
@@ -472,28 +656,51 @@ strong {
         display: inline-block;
         vertical-align: middle;
         font-family: 'Gotham Pro Bold', sans-serif;
-        font-size: 18px;
+        font-size: 14px;
+        @media screen and (min-width: 480px) {
+            font-size: 18px;
+        }
     }
     &-footer {
         padding: 0 20px 20px 20px;
         .btn-primary {
             span {
-                padding: 8px 34px;  
+                padding: 8px 25px;
+                @media screen and (min-width: 480px) {
+                    padding: 8px 34px;
+                }
+                @media screen and (min-width: 992px) {
+                    padding: 8px 23px;
+                }
+                @media screen and (min-width: 1199px) {
+                    padding: 7px 34px;
+                }
             }
         }
     }
 }
 
 .recommended {
-    padding-bottom: 90px;           
+    padding-bottom: 90px;
+    @media screen and (min-width: 1199px) {
+        padding-bottom: 128px;
+    }
 }
 
 // advantages
 .advantages {
+    @media screen and (min-width: 1199px) {
+        margin-bottom: 97px;
+    }
     &-left {
         position: relative;
         text-align: right;
         margin-bottom: 79px;
+        @media screen and (min-width: 992px) {
+            width: 50%;
+            float: left;
+            margin-right: -4px;
+        }
     }
     &-text {
         position: absolute;
@@ -501,19 +708,67 @@ strong {
     &-item {
         position: absolute;
         top: 14%;
-        max-width: 275px;
-        left: 33px;
-        font-size: 14px;
-        line-height: 23px;  
+        max-width: 200px;
+        left: 0;
+        font-size: 10px;
+        line-height: 14px;
         text-align: left;
+        @media screen and (min-width: 480px) {
+            max-width: 275px;
+            left: 33px;
+            font-size: 14px;
+            line-height: 23px;
+        }
+        @media screen and (min-width: 600px) {
+            left: 22%;
+        }
+        @media screen and (min-width: 768px) {
+            left: 40%;
+        }
+        @media screen and (min-width: 992px) {
+            left: 13%;
+        }
+        @media screen and (min-width: 1280px) {
+            top: 14.5%;
+            left: 26%;
+        }
         &--middle {
             top: 54%;
-            left: 0;    
-            max-width: 340px;   
+            left: 0;
+            max-width: 340px;
+            @media screen and (min-width: 600px) {
+                left: 21%;
+            }
+            @media screen and (min-width: 768px) {
+                left: 35%;
+            }
+            @media screen and (min-width: 992px) {
+                left: 5%;
+            }
+            @media screen and (min-width: 1199px) {
+                left: 13.5%;
+                top: 55%;
+            }
         }
         &--bottom {
             top: 88.3%;
-            left: 24%;
+            left: 0;
+            @media screen and (min-width: 480px) {
+                left: 24%;
+            }
+            @media screen and (min-width: 600px) {
+                left: 33%;
+            }
+            @media screen and (min-width: 768px) {
+                left: 45%;
+            }
+            @media screen and (min-width: 992px) {
+                left: 24%;
+            }
+            @media screen and (min-width: 1199px) {
+                top: 93.3%;
+                left: 28.5%;
+            }
         }
     }
     &-heading {
@@ -533,27 +788,47 @@ strong {
         &--middle {
             top: 57%;
             right: 0;
+            @media screen and (min-width: 1199px) {
+                top: 57.5%;
+                right: 45px;
+            }
         }
         &--bottom {
             top: 89%;
             right: 0;
+            @media screen and (min-width: 1199px) {
+                top: 93.5%;
+                right: 65px;
+            }
         }
     }
     &-right {
         position: relative;
+        @media screen and (min-width: 992px) {
+            width: 50%;
+            float: left;
+        }
         .advantages-img-holder {
-            margin-left: -15px; 
-            margin-bottom: -206px;  
+            margin-left: -15px;
+            margin-bottom: -206px;
         }
         .advantages-marker {
             position: absolute;
             top: 8%;
             left: 15px;
             right: auto;
+            @media screen and (min-width: 1199px) {
+                top: 14%;
+                left: 82%;
+            }
             &--middle {
                 top: 32%;
                 right: 0;
                 left: 90px;
+                @media screen and (min-width: 1199px) {
+                    top: 44.5%;
+                    left: 85px;
+                }
             }
             &--bottom {
                 top: 90%;
@@ -562,15 +837,33 @@ strong {
         }
         .advantages-item {
             position: absolute;
-            top: 3.5%;
-            left: 30%;
+            top: 0;
+            left: 42%;
             max-width: 280px;
-            font-size: 14px;
             text-align: left;
+            @media screen and (min-width: 480px) {
+                top: 3.5%;
+                left: 30%;
+            }
+            @media screen and (min-width: 1199px) {
+                top: 9.5%;
+                left: 43%;
+            }
             &--middle {
                 top: 30.6%;
                 left: 47%;
                 max-width: 240px;
+                @media screen and (min-width: 768px) {
+                    left: 36%;
+                }
+                @media screen and (min-width: 992px) {
+                    left: 45%;
+                }
+                @media screen and (min-width: 1199px) {
+                    top: 39.6%;
+                    left: 36%;
+                    max-width: none;
+                }
             }
             &--bottom {
                 top: 90%;
@@ -578,18 +871,36 @@ strong {
             }
         }
     }
+    &-img {
+        @media screen and (min-width: 992px) {
+            padding-top: 50px;
+            @include clearfix;
+        }
+        @media screen and (min-width: 1024px) {
+            padding-top: 35px;
+        }
+    }
     &-bottom {
-        position: relative; 
+        position: relative;
         z-index: 2;
-        padding: 14px 51px 30px;  
+        padding: 14px 51px 30px;
         background-color: #f5f5f5;
         font-size: 14px;
-        line-height: 23px;    
+        line-height: 23px;
         text-align: center;
         margin: 0px -15px;
+        @media screen and (min-width: 992px) {
+            margin: 0 0 0 23%;
+            max-width: 350px;
+        }
+        @media screen and (min-width: 1199px) {
+            margin: 71px 0 0 20.5%;
+            max-width: 460px;
+            padding: 14px 51px 8px;
+        }
         &-heading {
             font-family: 'Gotham Pro Bold', sans-serif;
-            margin-bottom: 11px;    
+            margin-bottom: 11px;
         }
     }
 }
@@ -605,6 +916,9 @@ strong {
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+    @media screen and (min-width: 1199px) {
+        padding-bottom: 83px;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -615,23 +929,38 @@ strong {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .btn-primary span {
-        padding: 15px 38px;
+        padding: 15px;
+        font-size: 12px;
+        @media screen and (min-width: 480px) {
+            padding: 15px 38px;
+            font-size: 18px;
+        }
+        @media screen and (min-width: 1199px) {
+            padding: 15px 95px;
+        }
     }
     .heading-h1 {
         z-index: 3;
         margin-bottom: -37px;
+        @media screen and (min-width: 992px) {
+            margin-bottom: 0;
+        }
     }
     &-icon {
         margin: 0;
         padding: 20px 0 13px;
+        @media screen and (min-width: 1199px) {
+            padding-top: 41px;
+            padding-bottom: 17px;
+        }
     }
     &-text {
-        line-height: 26px;  
+        line-height: 24px;
     }
     &-heading {
         position: relative;
         z-index: 2;
-        padding: 40px 65px 0;
+        padding: 40px 0 0;
         margin-bottom: 10px;
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 24px;
@@ -640,6 +969,17 @@ strong {
         background-size: cover;
         display: inline-block;
         min-height: 110px;
+        @media screen and (min-width: 480px) {
+            padding: 40px 65px 0;
+        }
+        @media screen and (min-width: 992px) {
+            margin-top: -30px;
+        }
+        @media screen and (min-width: 1199px) {
+            margin-top: -26px;
+            margin-left: 24%;
+            margin-right: -51px;
+        }
     }
     &-item {
         position: relative;
@@ -653,6 +993,9 @@ strong {
         position: relative;
         z-index: 2;
         margin-top: 34px;
+        @media screen and (min-width: 1199px) {
+            margin-top: 90px;
+        }
         .btn-primary {
             background-color: transparent;
         }
@@ -665,7 +1008,10 @@ strong {
 
 // order
 .order {
-    padding-bottom: 45px;   
+    padding-bottom: 45px;
+    @media screen and (min-width: 1199px) {
+        padding-bottom: 97px;
+    }
     &-list {
         counter-reset: list 00;
         padding: 0;
@@ -679,10 +1025,14 @@ strong {
         list-style-type: none;
         padding-top: 40px;
         margin-bottom: 36px;
-        padding-left: 45px;
-        padding-right: 45px;
+        padding-left: 25px;
+        padding-right: 25px;
         font-size: 18px;
-        line-height: 23px;  
+        line-height: 23px;
+        @media screen and (min-width: 480px) {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
         @media screen and (min-width: 991px) {
             width: 33.3%;
             padding: 40px 15px 0;
@@ -691,13 +1041,17 @@ strong {
         }
         &:before {
             position: absolute;
-            left: 45px;
-            right: 39px;
+            left: 25px;
+            right: 25px;
             top: 3px;
             counter-increment: list;
             content: counter(list, decimal-leading-zero) ". ";
             text-align: right;
             font-size: 18px;
+            @media screen and (min-width: 480px) {
+                left: 45px;
+                right: 39px;
+            }
             @media screen and (min-width: 991px) {
                 left: 15px;
                 right: 15px;
@@ -708,9 +1062,13 @@ strong {
             position: absolute;
             top: 13px;
             height: 1px;
-            left: 45px;
-            right: 45px;
+            left: 25px;
+            right: 25px;
             background-color: #191919;
+            @media screen and (min-width: 480px) {
+                left: 45px;
+                right: 39px;
+            }
             @media screen and (min-width: 991px) {
                 left: 15px;
                 right: 15px;
@@ -722,8 +1080,11 @@ strong {
 // reviews 
 .reviews {
     padding-bottom: 96px;
+    @media screen and (min-width: 1199px) {
+        padding-bottom: 112px;
+    }
     .owl-carousel.owl-loaded {
-        margin-top: 42px;   
+        margin-top: 42px;
     }
     .owl-carousel .owl-item img {
         width: auto;
@@ -731,18 +1092,68 @@ strong {
         vertical-align: middle;
     }
     &-img {
+        position: relative;
         text-align: center;
         margin-bottom: 30px;
         text-align: center;
+        @media screen and (min-width: 992px) {
+            width: 263px;
+            text-align: right;
+            float: left;
+        }
     }
     &-name {
         margin-bottom: 30px;
         font-size: 18px;
+        @media screen and (min-width: 992px) {
+            margin-bottom: 8px;
+            margin-top: -5px;
+        }
     }
     &-text {
         text-align: center;
         font-size: 14px;
         line-height: 22px;
+        @media screen and (min-width: 992px) {
+            width: calc(100% - 263px);
+            float: left;
+            text-align: left;
+            line-height: 23px;
+            padding-left: 30px;
+        }
+    }
+    &-counter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-size: 18px;
+    }
+    &-quot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media screen and (min-width: 992px) {
+            left: 39px;
+        }
+    }
+    &-nav {
+        padding: 0;
+        margin: 0;
+        @include clearfix;
+        list-style-type: none;
+        li {
+            float: left;
+            @media screen and (min-width: 992px) {
+                margin-top: 17px;
+            }
+            &.reviews-next {
+                float: right;
+            }
+        }
+        &-holder {
+            display: inline-block;
+        }
     }
 }
 
@@ -750,28 +1161,70 @@ strong {
     padding: 43px 0;
     background-color: #f7f7f7;
     font-size: 14px;
+    @media screen and (min-width: 992px) {
+        padding-top: 25px;
+    }
     &-heading {
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 14px;
         margin-bottom: 13px;
         text-align: center;
+        @media screen and (min-width: 992px) {
+            text-align: left;
+            margin-bottom: 10px;
+        }
     }
     .contacts {
         margin-bottom: 17px;
         text-align: center;
-        padding: 0 75px;    
+        padding: 0 25px;
+        @media screen and (min-width: 480px) {
+            padding: 0 75px;
+        }
+        @media screen and (min-width: 992px) {
+            text-align: left;
+            padding: 0;
+        }
     }
     &-right {
-        padding-top: 21px;  
+        padding-top: 21px;
+        @media screen and (min-width: 992px) {
+            float: right;
+            width: 51%;
+            padding-top: 0;
+        }
         &:nth-of-type(2) {
-            padding: 0; 
+            padding: 0;
+            @media screen and (min-width: 992px) {
+                width: 49%;
+                padding: 2px 0 0 3px;
+            }
+        }
+        &:nth-of-type(1) {
+            @media screen and (min-width: 992px) {
+                padding: 0;
+            }
         }
     }
 }
 
+.float-heading {
+    @media screen and (min-width: 992px) {
+        float: left;
+    }
+}
+
 .subscribe {
-    width: 87%; 
-    margin: 0 auto 26px; 
+    width: 87%;
+    margin: 0 auto 26px;
+    @media screen and (min-width: 992px) {
+        width: 100%;
+        margin: 0 0 26px;
+    }
+    @media screen and (min-width: 1199px) {
+        margin-bottom: 30px;
+        padding-right: 29%;
+    }
 }
 
 .rekvizit {
@@ -779,6 +1232,13 @@ strong {
     margin: 0;
     list-style-type: none;
     text-align: center;
+    li {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    @media screen and (min-width: 992px) {
+        text-align: left;
+    }
 }
 
 .form-group {
@@ -808,15 +1268,42 @@ strong {
         outline: none;
         box-shadow: none;
     }
+    &--modal {
+        height: 45px;
+        padding-left: 22px;
+        line-height: 45px;
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-size: 14px;
+        border: 1px solid #191919;
+        @include placeholder(#191919);
+        &:focus {
+            border: 1px solid #191919;
+        }
+    }
+}
+
+textarea.form-control {
+    height: 70px;
+    resize: none;
 }
 
 .bottom-line {
     padding: 30px 10%;
     text-align: center;
+    @media screen and (min-width: 992px) {
+        padding: 28px 0;
+    }
 }
 
 .copy {
     margin-bottom: 20px;
+    @media screen and (min-width: 992px) {
+        float: left;
+        width: 51%;
+        text-align: left;
+        padding-right: 15%;
+        font-size: 12px;
+    }
 }
 
 .social {
@@ -825,10 +1312,19 @@ strong {
         margin: 0;
         list-style-type: none;
         text-align: center;
+        @media screen and (min-width: 992px) {
+            text-align: left;
+            float: left;
+            width: 49%;
+            padding-left: 4px;
+        }
     }
     &-item {
         display: inline-block;
         margin-right: 10px;
+        @media screen and (min-width: 992px) {
+            margin-right: 5px;
+        }
         a {
             display: block;
         }
@@ -836,4 +1332,135 @@ strong {
             margin-right: 0;
         }
     }
+}
+
+// modals
+.modal {
+    &-title {
+        text-align: center;
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+    }
+    &-dialog {
+        width: 750px;
+        &--sm {
+            width: 555px;
+        }
+    }
+    &-content {
+        border-radius: 0;
+        .form-group {
+            margin-bottom: 20px;
+        }
+    }
+    &-body {
+        padding: 20px 68px 88px;
+    }
+    &-header {
+        padding: 41px 25% 20px;
+        border: none;
+        .close {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            opacity: 1;
+        }
+    }
+    &-footer {
+        padding-bottom: 40px;
+        padding-top: 30px;
+    }
+}
+
+.btn-modal {
+    width: 100%;
+    text-align: center;
+    background-color: #9d37fc;
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+// tables 
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #e8e8e8;
+    font-weight: normal;
+}
+
+.table > tbody > tr > td img {
+    max-height: 70px;
+}
+
+.table > tbody > tr > td.delete {
+    width: 25px;
+    padding: 0;
+}
+
+.table > tbody > tr > td.color {
+    text-align: left;
+}
+
+.basket-modal {
+    .table {
+        label {
+            display: block;
+            font-weight: normal;
+            span {
+                margin-left: 10px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .color {
+            text-align: left;
+        }
+    }
+}
+
+.table {
+    label {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+    }
+}
+
+
+
+.personal-data {
+    padding: 30px;
+    border-top: 1px solid #e8e8e8;
+    .table {
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+    label {
+        font-size: 12px;
+        font-weight: normal;
+        display: block;
+        &.label-inline {
+            display: inline-block;
+        }
+    }
+}
+
+.personal-heading {
+    font-family: 'Gotham Pro Bold', sans-serif;
+    font-size: 14px;
+}
+
+.personal-final {
+    padding-top: 15px;
 }
