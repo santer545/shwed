@@ -60,7 +60,8 @@ function numberOfslides() {
 
         }
 
-        $('.reviews-counter').text(display_text + '/<sup>' + e.item.count + '</sup>');
+        $('.reviews-counter').find('span').text(display_text);
+        $('.reviews-counter').find('sup').text('/' + e.item.count);
 
 
     });
@@ -86,6 +87,8 @@ function owl_carousel_page_numbers(e){
 
     }   
 
-    $('#info').text( display_text + '/' + e.item.count);
+    $('.reviews-counter').find('span').text(display_text);
+    $('.reviews-counter').find('sup').text('/' + e.item.count);
+    /*$('#info').text( display_text + '/' + e.item.count);*/
 
 }

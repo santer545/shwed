@@ -365,9 +365,10 @@ strong {
         span {
             display: block;
             font-family: 'Gotham Pro Black', sans-serif;
-            /* background-color: #f5e800; */
+            background-color: #f5e800;
             line-height: 63px;
             @media screen and (min-width: 1024px) {
+                background-color: transparent;
                 font-size: 60px;
                 position: relative;
                 z-index: 1;
@@ -388,9 +389,13 @@ strong {
         margin-left: -15px;
         margin-right: -15px;
         @media screen and (min-width: 992px) {
-            width: 47%;
+            width: 67%;
             float: left;
-            margin: 0;
+            margin: 0 -20% 0 0;
+        }
+        @media screen and (min-width: 1601px) {
+            width: 87%;
+            margin: 0 -40% 0 0;
         }
         img {
             width: 100%;
@@ -449,29 +454,49 @@ strong {
 .catalog {
     padding-bottom: 100px;
     &-block {
+        overflow: hidden;
         border: 1px solid #e8e8e8;
-        display: flex;
-        flex-wrap: wrap;
+        @media screen and (min-width: 992px) {
+            margin-top: 43px;
+        }
+        /* display: flex;
+        flex-wrap: wrap; */
     }
     &-img {
-        border-right: 1px solid #e8e8e8;
+        position: relative;
+        /* border-right: 1px solid #e8e8e8; */
         padding: 27px 10px 8px;
         text-align: center;
         margin: 0;
-        flex-grow: 1;
-        order: 1;
-        width: 100%;
+        float: left;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 10000px;
+            width: 1px;
+            background-color: #e8e8e8;
+        }
         @media screen and (min-width: 480px) {
             width: 135px;
+        }
+        @media screen and (min-width: 1199px) {
+            width: 264px;
         }
     }
     &-info {
         font-size: 12px;
         padding-top: 25px;
         border-top: 1px solid #e8e8e8;
-        order: 4;
-        @media screen and (min-width: 600px) {
+        background-color: #fff;
+        clear: both;
+        position: relative;
+        z-index: 2;
+        @media screen and (min-width: 1199px) {
             width: 100%;
+            order: 1;
+            padding-bottom: 66px;
         }
         ul {
             list-style-type: none;
@@ -480,12 +505,26 @@ strong {
             @media screen and (min-width: 480px) {
                 padding: 0 0 0 30px;
             }
+            @media screen and (min-width: 1199px) {
+                float: left;
+                width: 52%;
+            }
             &:nth-of-type(2) {
                 display: none;
+                @media screen and (min-width: 1199px) {
+                    display: block;
+                    width: 48%;
+                }
             }
             li {
                 margin-bottom: 11px;
             }
+        }
+    }
+    &-flex {
+        @media screen and (min-width: 1199px) {
+            display: flex;
+            flex-direction: column;
         }
     }
     &-detail {
@@ -493,32 +532,59 @@ strong {
         padding: 14px 0;
         border-top: 1px solid #e8e8e8;
         color: #898989;
+        background-color: #fff;
         text-align: center;
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 14px;
         margin-top: 30px;
+        @media screen and (min-width: 1199px) {
+            display: none;
+        }
     }
-    &-footer {}
-    &-header {
-        font-family: 'Gotham Pro Bold', sans-serif;
-        font-size: 18px;
-        padding: 22px 30px 10px;
-        order: 2;
-        flex-grow: 3;
-        width: calc(100% - 135px);
-        @media screen and (min-width: 480px) {
-            padding: 22px 30px 0;
+    &-footer {
+        overflow: hidden;
+        padding-left: 30px;
+        @media screen and (min-width: 1199px) {
+            order: 2;
+            border-top: 1px solid #e8e8e8;
+            padding: 16px 0 16px 25px;
         }
         .btn-wr {
             padding: 21px 0 0 0;
+            @media screen and (min-width: 1199px) {
+                display: inline-block;
+                vertical-align: middle;
+                padding-top: 0;
+                margin-right: 15px;
+            }
+        }
+        .btn-default {
+            @media screen and (min-width: 1199px) {
+                padding: 10px 83px;
+            }
         }
         .btn-primary {
             span {
                 padding: 4px 36px;
                 @media screen and (min-width: 480px) {
-                    padding: 4px 41px;
+                    padding: 6px 41px;
+                }
+                @media screen and (min-width: 1199px) {
+                    padding: 7px 58px;
                 }
             }
+        }
+    }
+    &-header {
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-size: 18px;
+        padding: 22px 30px 10px;
+        overflow: hidden;
+        /* order: 2; */
+        /* flex-grow: 3;
+        width: calc(100% - 135px); */
+        @media screen and (min-width: 480px) {
+            padding: 22px 30px;
         }
     }
     &-price {
@@ -528,6 +594,12 @@ strong {
         display: inline-block;
         vertical-align: middle;
         margin-right: 10px;
+        @media screen and (min-width: 1199px) {
+            margin-top: 0;
+            font-size: 24px;
+            margin-left: 12px;
+            margin-right: 0;
+        }
         &--old {
             position: relative;
             font-family: 'Gotham Pro', sans-serif;
@@ -548,7 +620,28 @@ strong {
 }
 
 .availability {
+    font-family: 'Gotham Pro', sans-serif;
+    font-size: 18px;
     display: none;
+    @media screen and (min-width: 1199px) {
+        display: block;
+        width: 44%;
+        float: right;
+        margin-top: -3px;
+    }
+    &-icon {
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-size: 8px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        border-radius: 50%;
+        border: 1px solid #191919;
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+    }
 }
 
 // about 
@@ -627,6 +720,9 @@ strong {
         padding: 17px 30px;
         border-bottom: 1px solid #e8e8e8;
         text-align: center;
+        img {
+            max-height: 105px;
+        }
     }
     &-info {
         padding: 11px 20px 0;
@@ -1108,6 +1204,9 @@ strong {
         text-align: center;
         margin-bottom: 30px;
         text-align: center;
+        @media screen and (min-width: 480px) {
+            margin-bottom: 5px;
+        }
         @media screen and (min-width: 992px) {
             width: 263px;
             text-align: right;
@@ -1117,6 +1216,9 @@ strong {
     &-name {
         margin-bottom: 30px;
         font-size: 18px;
+        @media screen and (min-width: 480px) {
+            margin-bottom: 20px;
+        }
         @media screen and (min-width: 992px) {
             margin-bottom: 8px;
             margin-top: -5px;
@@ -1125,7 +1227,7 @@ strong {
     &-text {
         text-align: center;
         font-size: 14px;
-        line-height: 22px;
+        line-height: 23px;
         @media screen and (min-width: 992px) {
             width: calc(100% - 263px);
             float: left;
@@ -1135,25 +1237,41 @@ strong {
         }
     }
     &-counter {
+        top: 0;
+        right: 20%;
         position: absolute;
-        bottom: 0;
-        left: 0;
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 18px;
+        @media screen and (min-width: 480px) {
+            letter-spacing: 1px;
+        }
+        @media screen and (min-width: 992px) {
+            bottom: 34px;
+            top: auto;
+            left: 36px;
+            right: auto;
+            letter-spacing: 4px;
+        }
     }
     &-quot {
         position: absolute;
         top: 0;
         left: 0;
+        @media screen and (min-width: 480px) {
+            left: 18%;
+        }
         @media screen and (min-width: 992px) {
             left: 39px;
         }
     }
     &-nav {
         padding: 0;
-        margin: 0;
+        margin: -15px -45px 0;
         @include clearfix;
         list-style-type: none;
+        @media screen and (min-width: 992px) {
+            margin: 0;
+        }
         li {
             float: left;
             @media screen and (min-width: 992px) {
@@ -1229,6 +1347,9 @@ strong {
 .subscribe {
     width: 87%;
     margin: 0 auto 26px;
+    @media screen and (min-width: 480px) {
+        margin-top: 40px;
+    }
     @media screen and (min-width: 992px) {
         width: 100%;
         margin: 0 0 26px;
@@ -1363,23 +1484,47 @@ textarea.form-control {
         line-height: 32px;
     }
     &-dialog {
-        width: 750px;
+        width: 100%;
+        margin-top: 80px;
+        margin-left: 0;
+        margin-right: 0;
+        @media screen and (min-width: 768px) {
+            width: 750px;
+        }
         &--sm {
-            width: 555px;
+            width: 100%;
+            @media screen and (min-width: 768px) {
+                width: 555px;
+            }
+        }
+        .btn {
+            font-size: 14px;
+            @media screen and (min-width: 768px) {
+                font-size: 18px;
+            }
+        }
+        .btn-primary span {
+            padding: 8px 58px;
         }
     }
     &-content {
         border-radius: 0;
         .form-group {
             margin-bottom: 20px;
+            .fake-checkbox {
+                margin-right: 10px;
+            }
         }
     }
     &-body {
         padding: 20px 68px 88px;
     }
     &-header {
-        padding: 41px 25% 20px;
+        padding: 22px 21%;
         border: none;
+        @media screen and (min-width: 768px) {
+            padding: 41px 25% 20px;
+        }
         .close {
             position: absolute;
             top: -40px;
@@ -1389,7 +1534,11 @@ textarea.form-control {
     }
     &-footer {
         padding-bottom: 40px;
-        padding-top: 30px;
+        padding-top: 20px;
+        border: none;
+        @media screen and (min-width: 768px) {
+            padding-top: 30px;
+        }
     }
 }
 
@@ -1409,15 +1558,35 @@ textarea.form-control {
 .table > tbody > tr > td,
 .table > tfoot > tr > th,
 .table > tfoot > tr > td {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     vertical-align: middle;
     border: 1px solid #e8e8e8;
     font-weight: normal;
 }
 
+.table > tbody > tr > th {
+    font-size: 14px;
+}
+
+.table > tbody > tr > td {
+    font-size: 12px;
+}
+
+.table > tbody > tr > td.td-price {
+    font-size: 18px;
+}
+
 .table > tbody > tr > td img {
     max-height: 70px;
+}
+
+.td-img,
+.delete {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: table-cell;
+    }
 }
 
 .table > tbody > tr > td.delete {
@@ -1454,10 +1623,8 @@ textarea.form-control {
     }
 }
 
-
-
 .personal-data {
-    padding: 30px;
+    padding: 24px 14px;
     border-top: 1px solid #e8e8e8;
     .table {
         label {
@@ -1472,6 +1639,7 @@ textarea.form-control {
         display: block;
         &.label-inline {
             display: inline-block;
+            margin-right: 15px;
         }
     }
 }
@@ -1479,8 +1647,56 @@ textarea.form-control {
 .personal-heading {
     font-family: 'Gotham Pro Bold', sans-serif;
     font-size: 14px;
+    margin-bottom: 6px;
 }
 
 .personal-final {
-    padding-top: 15px;
+    padding-top: 7px;
+    @media screen and (min-width: 768px) {
+        padding-top: 15px;
+    }
+}
+
+// fake checkbox
+.fake-checkbox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #898989;
+    margin: 0 10px 0 0;
+    @media screen and (min-width: 768px) {
+        width: 18px;
+        height: 18px;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        transform: rotate(45deg);
+        width: 4px;
+        height: 5px;
+        border: 1px solid #191919;
+        display: none;
+        border-top: none;
+        border-left: none;
+        @media screen and (min-width: 768px) {
+            left: 6px;
+            top: 4px;
+            width: 5px;
+            height: 7px;
+        }
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+    &:checked + .fake-checkbox {
+        border: 1px solid #191919;
+        &:after {
+            display: block;
+        }
+    }
 }
