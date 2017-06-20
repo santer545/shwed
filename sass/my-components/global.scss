@@ -456,19 +456,16 @@ strong {
     &-block {
         overflow: hidden;
         border: 1px solid #e8e8e8;
+        margin-bottom: 30px;
         @media screen and (min-width: 992px) {
             margin-top: 43px;
         }
-        /* display: flex;
-        flex-wrap: wrap; */
     }
     &-img {
         position: relative;
-        /* border-right: 1px solid #e8e8e8; */
         padding: 27px 10px 8px;
         text-align: center;
         margin: 0;
-        float: left;
         &:after {
             content: '';
             position: absolute;
@@ -480,6 +477,7 @@ strong {
         }
         @media screen and (min-width: 480px) {
             width: 135px;
+            float: left;
         }
         @media screen and (min-width: 1199px) {
             width: 264px;
@@ -544,6 +542,10 @@ strong {
     &-footer {
         overflow: hidden;
         padding-left: 30px;
+        padding-bottom: 30px;
+        @media screen and (min-width: 480px) {
+            padding-bottom: 0;
+        }
         @media screen and (min-width: 1199px) {
             order: 2;
             border-top: 1px solid #e8e8e8;
@@ -551,6 +553,9 @@ strong {
         }
         .btn-wr {
             padding: 21px 0 0 0;
+            @media screen and (min-width: 480px) {
+                padding-top: 10px;
+            }
             @media screen and (min-width: 1199px) {
                 display: inline-block;
                 vertical-align: middle;
@@ -580,9 +585,6 @@ strong {
         font-size: 18px;
         padding: 22px 30px 10px;
         overflow: hidden;
-        /* order: 2; */
-        /* flex-grow: 3;
-        width: calc(100% - 135px); */
         @media screen and (min-width: 480px) {
             padding: 22px 30px;
         }
@@ -701,6 +703,9 @@ strong {
 // card 
 .card {
     &-item {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
         border: 1px solid #e8e8e8;
         margin: 25px 0 0;
         @media screen and (min-width: 480px) {
@@ -770,7 +775,10 @@ strong {
         }
     }
     &-footer {
-        padding: 0 20px 20px 20px;
+        display: table-footer-group;
+        &-wr {
+            padding: 0 20px 20px 20px;
+        }
         .btn-primary {
             span {
                 padding: 8px 25px;
@@ -1238,12 +1246,13 @@ strong {
     }
     &-counter {
         top: 0;
-        right: 20%;
+        right: 10%;
         position: absolute;
         font-family: 'Gotham Pro Bold', sans-serif;
         font-size: 18px;
         @media screen and (min-width: 480px) {
             letter-spacing: 1px;
+            right: 19%;
         }
         @media screen and (min-width: 992px) {
             bottom: 34px;
@@ -1399,6 +1408,7 @@ strong {
     border-radius: 0;
     border: 1px solid #e8e8e8;
     color: #191919;
+    box-shadow: none;
     @include placeholder(#191919);
     &:focus {
         border: 1px solid #e8e8e8;
@@ -1486,10 +1496,11 @@ textarea.form-control {
     &-dialog {
         width: 100%;
         margin-top: 80px;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
         @media screen and (min-width: 768px) {
             width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
         &--sm {
             width: 100%;
@@ -1517,7 +1528,10 @@ textarea.form-control {
         }
     }
     &-body {
-        padding: 20px 68px 88px;
+        padding: 20px;
+        @media screen and (min-width: 480px) {
+            padding: 20px 68px 88px;
+        }
     }
     &-header {
         padding: 22px 21%;
@@ -1527,9 +1541,16 @@ textarea.form-control {
         }
         .close {
             position: absolute;
-            top: -40px;
-            right: -40px;
+            top: 20px;
+            right: 35px;
             opacity: 1;
+            @media screen and (min-width: 768px) {
+                top: -40px;
+                right: 0;
+            }
+            @media screen and (min-width: 991px) {
+                right: -30px;
+            }
         }
     }
     &-footer {
@@ -1538,6 +1559,12 @@ textarea.form-control {
         border: none;
         @media screen and (min-width: 768px) {
             padding-top: 30px;
+        }
+        .col-xs-4 {
+            width: 100%;
+            @media screen and (min-width: 480px) {
+                width: 33.3333%;
+            }
         }
     }
 }
@@ -1596,6 +1623,8 @@ textarea.form-control {
 
 .table > tbody > tr > td.color {
     text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .basket-modal {
@@ -1603,14 +1632,11 @@ textarea.form-control {
         label {
             display: block;
             font-weight: normal;
+
             span {
-                margin-left: 10px;
                 display: inline-block;
                 vertical-align: middle;
             }
-        }
-        .color {
-            text-align: left;
         }
     }
 }
@@ -1620,6 +1646,13 @@ textarea.form-control {
         display: block;
         font-size: 12px;
         font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.modal {
+    label {
+        cursor: pointer;
     }
 }
 
@@ -1652,6 +1685,10 @@ textarea.form-control {
 
 .personal-final {
     padding-top: 7px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 480px) {
+        margin-bottom: 0;
+    }
     @media screen and (min-width: 768px) {
         padding-top: 15px;
     }
@@ -1666,6 +1703,7 @@ textarea.form-control {
     height: 13px;
     border: 1px solid #898989;
     margin: 0 10px 0 0;
+    cursor: pointer;
     @media screen and (min-width: 768px) {
         width: 18px;
         height: 18px;
@@ -1691,7 +1729,21 @@ textarea.form-control {
     }
 }
 
-input[type="checkbox"] {
+.error-text {
+    font-size: 12px;
+    padding-top: 5px;
+    display: none;
+}
+
+.has-error {
+    .error-text {
+        display: inline-block;
+    }
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
     display: none;
     &:checked + .fake-checkbox {
         border: 1px solid #191919;
@@ -1700,3 +1752,88 @@ input[type="checkbox"] {
         }
     }
 }
+
+/* input number */
+
+.quantity {
+  position: relative;
+  width: 25px;
+  display: inline-block;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 25px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.65;
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #898989;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  cursor: pointer;
+  border: 1px solid #898989;
+  text-align: center;
+  color: #333;
+  font-size: 11px;
+  line-height: 1.7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 25px;
+  height: 17px;
+  border: 1px solid #898989;
+  border-bottom: none;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  height: 17px;
+  border-top: none;
+}
+
+
+
+
+
