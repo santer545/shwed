@@ -460,6 +460,26 @@ strong {
         @media screen and (min-width: 992px) {
             margin-top: 43px;
         }
+        @media screen and (min-width: 1199px) {
+            position: relative; 
+        }
+    }
+    &-color {
+        position: absolute; 
+        bottom: 0;  
+        right: 0;      
+        list-style-type: none;
+        padding: 0; 
+        margin: 0;  
+        @media screen and (min-width: 1199px) {
+            left: 214px; 
+            right: auto;
+        }
+        
+        li {
+            width: 50px;    
+            height: 40px;   
+        }
     }
     &-img {
         position: relative;
@@ -481,6 +501,7 @@ strong {
         }
         @media screen and (min-width: 1199px) {
             width: 264px;
+            position: static;
         }
     }
     &-info {
@@ -722,9 +743,20 @@ strong {
         }
     }
     &-img {
+        position: relative; 
         padding: 17px 30px;
         border-bottom: 1px solid #e8e8e8;
         text-align: center;
+        .catalog-color {
+            right: 0;   
+            left: auto;
+
+            li {
+                width: 20px;    
+                height: 20px;   
+
+            }
+        }
         img {
             max-height: 105px;
         }

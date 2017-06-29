@@ -86,6 +86,11 @@
                 <div class="heading-h1">Каталог товаров</div>
                 <div class="catalog-block">
                     <figure class="catalog-img">
+                        <ul class="catalog-color">
+                            <li style="background-color: #ff0000;"></li>
+                            <li style="background-color: #cccccc;"></li>
+                            <li style="background-color: #ff0;"></li>
+                        </ul>
                         <img src="images/product.jpg" height="208" width="99" alt="">
                     </figure>
                     <div class="catalog-header">Шведская стенка №1 <span class="availability"><span class="availability-icon">?</span>Наличие товара на складе</span>
@@ -540,6 +545,11 @@
                     <div class="col-md-4">
                         <div class="card-item">
                             <figure class="card-img">
+                                <ul class="catalog-color">
+                                    <li style="background-color: #ff0000;"></li>
+                                    <li style="background-color: #cccccc;"></li>
+                                    <li style="background-color: #ff0;"></li>
+                                </ul>
                                 <img src="images/card-1.jpg" height="116" width="197" alt="">
                             </figure>
                             <div class="card-info">
@@ -1185,10 +1195,13 @@
                         <div class="form-group">
                             <label for="fio">Ф.И.О *</label>
                             <div class="row form-control-wr has-error">
-                                <div class="col-md-7"><input type="text" id="fio" class="form-control"></div>
-                                <div class="col-md-5"><div class="error-text">заполните пожалуйста поле</div></div>
+                                <div class="col-md-7">
+                                    <input type="text" id="fio" class="form-control">
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="error-text">заполните пожалуйста поле</div>
+                                </div>
                             </div>
-                            
                         </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
@@ -1196,7 +1209,9 @@
                                 <div class="col-md-7">
                                     <input type="text" id="email" class="form-control">
                                 </div>
-                                <div class="col-md-5"><div class="error-text">заполните пожалуйста поле</div></div>
+                                <div class="col-md-5">
+                                    <div class="error-text">заполните пожалуйста поле</div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1205,7 +1220,9 @@
                                 <div class="col-md-7">
                                     <input type="text" id="phone" class="form-control">
                                 </div>
-                                <div class="col-md-5"><div class="error-text">заполните пожалуйста поле</div></div>
+                                <div class="col-md-5">
+                                    <div class="error-text">заполните пожалуйста поле</div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1214,7 +1231,9 @@
                                 <div class="col-md-7">
                                     <input id="location" type="text" class="form-control">
                                 </div>
-                                <div class="col-md-5"><div class="error-text">заполните пожалуйста поле</div></div>
+                                <div class="col-md-5">
+                                    <div class="error-text">заполните пожалуйста поле</div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1242,8 +1261,7 @@
                                         <input type="checkbox" id="moscow"><span class="fake-checkbox"></span>Москва</label>
                                     <label class="label-inline" for="piter">
                                         <input type="checkbox" id="piter"><span class="fake-checkbox"></span>Санкт-Петербург</label>
-
-                                        <label class="label-inline" for="krasnodar">
+                                    <label class="label-inline" for="krasnodar">
                                         <input type="checkbox" id="krasnodar"><span class="fake-checkbox"></span>Краснодар</label>
                                     <label class="label-inline" for="ul">
                                         <input type="checkbox" id="ul"><span class="fake-checkbox"></span>Ульяновск</label>
@@ -1264,8 +1282,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-5">
-                                    <div class="small-text">Оплата наличными, 
-                                    при получении заказа</div>
+                                    <div class="small-text">Оплата наличными, при получении заказа</div>
                                 </div>
                             </div>
                         </div>
